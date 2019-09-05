@@ -41,7 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBaseService.cs" />
+    <Compile Include="IBusinessService.cs" />
+    <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BS.TLFramework.Model\BS.TLFramework.Model.csproj">
+      <Project>{14A107D2-4B02-43FB-BB88-13BC1301E52D}</Project>
+      <Name>BS.TLFramework.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Framework.csproj">
+      <Project>{9DB60813-BD58-4920-BDA5-1175E1B2247E}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

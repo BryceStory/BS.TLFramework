@@ -33,6 +33,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,6 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\NumeralHelper.cs" />
+    <Compile Include="Common\RegexHelper.cs" />
+    <Compile Include="Common\SessionHelper.cs" />
+    <Compile Include="Common\StringHelper.cs" />
+    <Compile Include="Common\UserHelper.cs" />
+    <Compile Include="Expression\DynamicExpressions.cs" />
+    <Compile Include="Expression\IOrderByExpression.cs" />
+    <Compile Include="Models\ActionModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\CurrentUser.cs" />
+    <Compile Include="Models\ResponseModel.cs" />
+    <Compile Include="Models\ResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
