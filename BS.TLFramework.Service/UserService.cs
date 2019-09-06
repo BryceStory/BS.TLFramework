@@ -11,4 +11,5 @@ namespace BS.TLFramework.Service
     public class UserService : BusinessService<User>, IUserService
     {
     }
+
 }

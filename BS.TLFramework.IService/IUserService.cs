@@ -17,4 +17,6 @@ namespace BS.TLFramework.IService
 
         //List<User> GetAuthList();
     }
+
+
 }

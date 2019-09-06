@@ -29,7 +29,6 @@ namespace BS.TLFramework.Model
         /// <summary>
         /// 创建时间
         /// </summary>
-        [DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
         [Display(Name = "创建时间")]
         public DateTime CreateDatetime { get; set; }
 

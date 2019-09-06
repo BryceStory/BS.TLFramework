@@ -20,7 +20,7 @@ namespace Framework.Web.IOC
         /// </summary>
         /// <param name="containerName"></param>
         /// <returns></returns>
-        public static IUnityContainer GetContainer(string containerName = "Containerl")
+        public static IUnityContainer GetContainer(string containerName = "Container")
         {
             if (!_UnityContainerDictionary.ContainsKey(containerName))
             {

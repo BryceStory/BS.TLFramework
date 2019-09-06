@@ -1,10 +1,13 @@
 ﻿using BS.TLFramework.IService;
+using BS.TLFramework.Model;
 using Framework.Web.IOC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+using Unity;
 
 namespace BS.TLFramework.Site.Controllers
 {
@@ -19,7 +22,23 @@ namespace BS.TLFramework.Site.Controllers
 
         public ActionResult Index()
         {
-            var a = this.iUserService.Get(1);
+            //User user = new User()
+            //{
+            //    Code = "1000",
+            //    Name = "admin",
+            //    Email = "448174650@qq.com",
+            //    Mobile = "15273738880",
+            //    Password = "123456",
+            //    IsMore=0,
+            //    LastLoginDate=DateTime.Now,
+            //    RoleID=0,
+            //    DepartmentID=0,
+            //    AuthDepartmentIDs="0,1"
+            //};
+
+            //iUserService.Save(user);
+            //iUserService.Commit();
+
             return View();
         }
 
