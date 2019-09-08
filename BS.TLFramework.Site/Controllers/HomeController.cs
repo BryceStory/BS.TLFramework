@@ -11,7 +11,7 @@ using Unity;
 
 namespace BS.TLFramework.Site.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private IUserService iUserService;
 

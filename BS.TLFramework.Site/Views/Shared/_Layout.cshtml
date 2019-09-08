@@ -10,28 +10,27 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.css" />
-    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/H-ui.admin.css" />
-    <link rel="stylesheet" type="text/css" href="/Content/Hui-iconfont/1.0.7/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="/Content/icheck/icheck.css" />
-    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/skin/default/skin.css" id="skin" />
-    <link rel="stylesheet" type="text/css" href="/static/h-ui.admin/css/style.css" />
-
-    <link rel="stylesheet" type="text/css" href="/Content/Pager.css" />
-
-    <link rel="stylesheet" type="text/css" href="/Content/site.css" />
-    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
-
-    <link rel="stylesheet" href="/Content/font-awesome.min.css" />
-
-
-    <link rel="stylesheet" href="/Scripts/bootstrap-multiselect/bootstrap-multiselect.css" type="text/css">
-    <link rel="stylesheet" href="/Scripts/Viewer/css/viewer.min.css" type="text/css">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
     <title>@ViewBag.Title - Bryce Story-MVC5+EF+Bootstrap</title>
+
+    <link rel="stylesheet" type="text/css" href="/Plugins/h-ui/css/H-ui.css" />
+    <link rel="stylesheet" type="text/css" href="/Plugins/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="/Plugins/Hui-iconfont/1.0.7/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/Plugins/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="/Plugins/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="/Plugins/h-ui.admin/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/Pager.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/site.css" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/Content/font-awesome.min.css" />
+    <link rel="stylesheet" href="/Plugins/bootstrap-multiselect/bootstrap-multiselect.css" type="text/css">
+    <link rel="stylesheet" href="/Plugins/Viewer/css/viewer.min.css" type="text/css">
+
+    @*@Styles.Render("~/Content/css");*@
+
+
+
+
 </head>
 <body>
     @Html.Partial("_Bread")
@@ -48,33 +47,26 @@
 
     @Html.Partial("Tip")
 
+    @*@Scripts.Render("~/bundles/jquery");
+        @Scripts.Render("~/bundles/bootstrap");
+        @Scripts.Render("~/bundles/Plugins");*@
 
-    <script type="text/javascript" src="/Scripts/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/Plugins/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript" src="/Scripts/Common.js"></script>
-
-    <script type="text/javascript" src="/Scripts/layer/2.1/layer.js"></script>
-    <script type="text/javascript" src="/Scripts/layer/2.1/extend/layer.ext.js"></script>
-    <script type="text/javascript" src="/Content/icheck/jquery.icheck.min.js"></script>
-    <script type="text/javascript" src="/static/h-ui/js/H-ui.js"></script>
-    <script type="text/javascript" src="/static/h-ui.admin/js/H-ui.admin.js"></script>
+    <script type="text/javascript" src="/Plugins/layer/2.1/layer.js"></script>
+    <script type="text/javascript" src="/Plugins/layer/2.1/extend/layer.ext.js"></script>
+    <script type="text/javascript" src="/Plugins/icheck/jquery.icheck.min.js"></script>
+    <script type="text/javascript" src="/Plugins/h-ui/js/H-ui.js"></script>
+    <script type="text/javascript" src="/Plugins/h-ui.admin/js/H-ui.admin.js"></script>
     <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
-
-
-
     <script type="text/javascript" src="/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script type="text/javascript" src="/Scripts/jquery.validate.min.js"></script>
     <script type="text/javascript" src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
-
-
-
-
-    <script type="text/javascript" src="/Scripts/Viewer/js/viewer.min.js"></script>
-    <script type="text/javascript" src="/Scripts/Viewer/js/viewer-jquery.min.js"></script>
-    <script src="~/Scripts/uploadifive/jquery.uploadifive.js"></script>
-    <script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
-    <script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
-    <script type="text/javascript" src="/Scripts/Viewer/js/viewer.min.js"></script>
-    <script type="text/javascript" src="/Scripts/Viewer/js/viewer-jquery.min.js"></script>
+    <script type="text/javascript" src="/Plugins/Viewer/js/viewer.min.js"></script>
+    <script type="text/javascript" src="/Plugins/Viewer/js/viewer-jquery.min.js"></script>
+    <script type="text/javascript" src="/Plugins/Viewer/js/viewer.min.js"></script>
+    <script type="text/javascript" src="/Plugins/Viewer/js/viewer-jquery.min.js"></script>
 
 </body>
 </html>

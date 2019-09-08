@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\CacheHelper.cs" />
+    <Compile Include="Common\EnumHelper.cs" />
     <Compile Include="Common\NumeralHelper.cs" />
     <Compile Include="Common\RegexHelper.cs" />
     <Compile Include="Common\SessionHelper.cs" />
