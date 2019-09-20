@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BS.TLFramework.Model</RootNamespace>
     <AssemblyName>BS.TLFramework.Model</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,6 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity\BaseEntity.cs" />
+    <Compile Include="Entity\Department.cs" />
+    <Compile Include="Entity\Employee.cs" />
+    <Compile Include="Entity\EmployeeDepartment.cs" />
+    <Compile Include="Entity\EmployeeMenu.cs" />
+    <Compile Include="Entity\EmployeeMenuAction.cs" />
+    <Compile Include="Entity\EmployeeRole.cs" />
+    <Compile Include="Entity\Menu.cs" />
+    <Compile Include="Entity\MenuAction.cs" />
+    <Compile Include="Entity\Merchant.cs" />
+    <Compile Include="Entity\Role.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="Migrations\201909041719375_AddUrl.cs" />
@@ -70,6 +81,10 @@
     <Compile Include="Migrations\201909060851027_AddUrl1.cs" />
     <Compile Include="Migrations\201909060851027_AddUrl1.Designer.cs">
       <DependentUpon>201909060851027_AddUrl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909191607504_AddUrl2.cs" />
+    <Compile Include="Migrations\201909191607504_AddUrl2.Designer.cs">
+      <DependentUpon>201909191607504_AddUrl2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Common\BaseExportModel.cs" />
@@ -97,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909060851027_AddUrl1.resx">
       <DependentUpon>201909060851027_AddUrl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909191607504_AddUrl2.resx">
+      <DependentUpon>201909191607504_AddUrl2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

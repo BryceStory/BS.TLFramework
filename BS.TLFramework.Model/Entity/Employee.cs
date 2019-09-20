@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 
 namespace BS.TLFramework.Model
 {
-    [Table("Users")]
-    public class User : BaseEntity
+    public class Employee : BaseEntity
     {
+
+        [Display(Name = "商户ID")]
+        [Required(ErrorMessage = "{0}不能为空")]
+        public long MerchantID { get; set; }
 
         /// <summary>
         /// 账号
@@ -20,7 +23,6 @@ namespace BS.TLFramework.Model
         [Required(ErrorMessage = "{0}不能为空")]
         [MinLength(2, ErrorMessage = "{0}不能少于2位")]
         [MaxLength(16, ErrorMessage = "{0}不能多于16位")]
-        [Index(IsUnique = true)]
         public string Code { get; set; }
 
         /// <summary>
@@ -29,23 +31,23 @@ namespace BS.TLFramework.Model
         [Display(Name = "姓名")]
         [Required(ErrorMessage = "{0}不能为空")]
         [MinLength(2, ErrorMessage = "{0}不能少于2位")]
-        [MaxLength(32, ErrorMessage = "{0}不能多于32位")]
-        [Index(IsUnique = true)]
+        [MaxLength(64, ErrorMessage = "{0}不能多于32位")]
         public string Name { get; set; }
 
         /// <summary>
         /// 邮箱
         /// </summary>
         [Display(Name = "Email")]
-        [MaxLength(64)]
+        [MaxLength(64, ErrorMessage = "{0}不能多于32位")]
         [EmailAddress]
         public string Email { get; set; }
 
         /// <summary>
-        /// 手机号
+        /// 手机
         /// </summary>
-        [Display(Name = "手机号")]
-        [MaxLength(11, ErrorMessage = "{0}不能多于11位")]
+        [Display(Name = "手机")]
+        [MinLength(11, ErrorMessage = "{0}必须是11位数字")]
+        [MaxLength(11, ErrorMessage = "{0}必须是11位数字")]
         public string Mobile { get; set; }
 
         /// <summary>
@@ -56,6 +58,8 @@ namespace BS.TLFramework.Model
         [Required(ErrorMessage = "{0}不能为空")]
         public string Password { get; set; }
 
+        public int IsAdmin { get; set; }
+
         /// <summary>
         /// 查看更多
         /// </summary>
@@ -63,43 +67,38 @@ namespace BS.TLFramework.Model
         public int IsMore { get; set; }
 
         /// <summary>
-        /// 最后登录时间
-        /// </summary>
-        public DateTime? LastLoginDate { get; set; }
-
-        /// <summary>
-        /// 角色ID
-        /// </summary>
-        public long? RoleID { get; set; }
-
-        /// <summary>
-        /// 部门ID
-        /// </summary>
-        public long? DepartmentID { get; set; }
-
-        /// <summary>
         /// 权限的部门ID集合
         /// </summary>
         [Display(Name = "权限的部门ID集合")]
         public string AuthDepartmentIDs { get; set; }
 
-        //----------------------------   virtual  ----------------------------------------
+        /// <summary>
+        /// 角色ID
+        /// </summary>
+        public long? EmployeeRoleID { get; set; }
 
+        /// <summary>
+        /// 部门ID
+        /// </summary>
+        public long? EmployeeDepartmentID { get; set; }
 
+        //----------------------------------------------------------------------
 
-        [ForeignKey("RoleID")]
-        public virtual Role Role { get; set; }
+        public virtual Merchant Merchant { get; set; }
 
-        [ForeignKey("DepartmentID")]
-        public virtual Department Department { get; set; }
+        public string MerchantCode { get { return Merchant.Code; } }
+        public string MerchantName { get { return Merchant.Name; } }
 
-        public string RoleName { get { return Role?.Name; } }
+        public virtual EmployeeRole EmployeeRole { get; set; }
+        public string EmployeeRoleName { get { return EmployeeRole?.Name; } }
 
-        public string DepartmentName { get { return Department?.Name; } }
+        public virtual EmployeeDepartment EmployeeDepartment { get; set; }
+        public string EmployeeDepartmentName { get { return EmployeeDepartment?.Name; } }
 
-        public string StatusDesc { get { return ((UserStatus)this.Status).ToDescription(); } }
+        public string StatusDesc { get { return ((EmployeeStatus)this.Status).ToDescription(); } }
 
-        public bool IsAdmin { get { return GlobalConfig.WebConfig.Administrators.Contains(Code); } }
+        [NotMapped]
+        public IList<long> MenuActionList { get { return EmployeeRole?.MenuActionList ?? new List<long>(); } }
 
         public List<long?> AuthDepartmentIDList
         {
@@ -109,7 +108,5 @@ namespace BS.TLFramework.Model
             }
         }
 
-        [NotMapped]
-        public IList<long> MenuActionList { get { return Role?.MenuActionList ?? new List<long>(); } }
     }
 }

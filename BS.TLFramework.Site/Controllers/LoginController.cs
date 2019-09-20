@@ -9,7 +9,6 @@ namespace BS.TLFramework.Site.Controllers
     [AllowAnonymous]
     public class LoginController : BaseController
     {
-        // GET: Login
         public ActionResult Index()
         {
             return View();

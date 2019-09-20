@@ -22,22 +22,23 @@ namespace BS.TLFramework.Site.Controllers
 
         public ActionResult Index()
         {
-            //User user = new User()
-            //{
-            //    Code = "1000",
-            //    Name = "admin",
-            //    Email = "448174650@qq.com",
-            //    Mobile = "15273738880",
-            //    Password = "123456",
-            //    IsMore=0,
-            //    LastLoginDate=DateTime.Now,
-            //    RoleID=0,
-            //    DepartmentID=0,
-            //    AuthDepartmentIDs="0,1"
-            //};
+            User user = new User()
+            {
+                Code = "1000",
+                Name = "admin",
+                Email = "448174650@qq.com",
+                Mobile = "15273738880",
+              //  Password = "123456",
+              //Password=Framework.s
+                IsMore = 0,
+                LastLoginDate = DateTime.Now,
+                RoleID = 0,
+                DepartmentID = 0,
+                AuthDepartmentIDs = "0,1"
+            };
 
-            //iUserService.Save(user);
-            //iUserService.Commit();
+            iUserService.Save(user);
+            iUserService.Commit();
 
             return View();
         }

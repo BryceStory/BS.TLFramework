@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace BS.TLFramework.Model
         /// 创建时间
         /// </summary>
         [Display(Name = "创建时间")]
-        public DateTime CreateDatetime { get; set; }
+        public DateTime CreateDatetime { get; set; } 
 
 
         /// <summary>
