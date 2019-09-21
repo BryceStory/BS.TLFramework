@@ -44,6 +44,11 @@
   <ItemGroup>
     <Compile Include="IBaseService.cs" />
     <Compile Include="IBusinessService.cs" />
+    <Compile Include="IEmployeeMenuActionService.cs" />
+    <Compile Include="IEmployeeMenuService.cs" />
+    <Compile Include="IEmployeeService.cs" />
+    <Compile Include="IMenuActionService.cs" />
+    <Compile Include="IMenuService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

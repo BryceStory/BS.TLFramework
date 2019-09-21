@@ -166,6 +166,7 @@ namespace BS.TLFramework.Service
         public IList<E> Gets(Expression<Func<E, bool>> expression, int PageIndex, int PageSize, params IOrderByExpression<E>[] orderbys)
         {
             IQueryable<E> query = this.dbContext.Set<E>().Where<E>(expression);
+           
 
             var result = this.ApplyOrderBy<E>(query, orderbys).ToPagedList<E>(PageIndex, PageSize);
 
@@ -183,11 +184,14 @@ namespace BS.TLFramework.Service
 
         public IList<E> GetsNoTracking(Expression<Func<E, bool>> expression, int PageIndex, int PageSize, params IOrderByExpression<E>[] orderbys)
         {
+
             IQueryable<E> query = this.dbContext.Set<E>().Where<E>(expression).AsNoTracking();
 
             var result = this.ApplyOrderBy<E>(query, orderbys).ToPagedList<E>(PageIndex, PageSize);
 
             return result;
+
+
         }
 
         //------------------------------------------------------------新增------------------------------------------------------------

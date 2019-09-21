@@ -185,4 +185,137 @@ namespace BS.TLFramework.Model
         [Description("启用")]
         Enable = 1,
     }
+
+    public enum LoginStatus
+    {
+        /// <summary>
+        /// 未知错误
+        /// </summary>
+        [Description("未知错误")]
+        Unknown = -9999,
+
+        /// <summary>
+        /// 商家不存在
+        /// </summary>
+        [Description("商家不存在")]
+        MerchantNotExists = -5,
+
+        /// <summary>
+        /// 用户不存在
+        /// </summary>
+        [Description("用户不存在")]
+        NotExists = -4,
+
+        /// <summary>
+        /// 密码不正确
+        /// </summary>
+        [Description("密码不正确")]
+        PasswordError = -3,
+
+        /// <summary>
+        /// 用户已锁定
+        /// </summary>
+        [Description("用户已锁定")]
+        Lock = -2,
+
+        /// <summary>
+        /// 用户已停用
+        /// </summary>
+        [Description("用户已停用")]
+        Disable = -1,
+
+        /// <summary>
+        /// 用户未激活（默认值）
+        /// </summary>
+        [Description("用户未激活")]
+        NotActive = 0,
+
+        /// <summary>
+        /// 成功
+        /// </summary>
+        [Description("成功")]
+        Success = 1,
+    }
+
+    public enum ActionCode
+    {
+        /// <summary>
+        /// 新增
+        /// </summary>
+        [Description("新增")]
+        Add,
+
+        /// <summary>
+        /// 修改
+        /// </summary>
+        [Description("修改")]
+        Modify,
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        [Description("删除")]
+        Delete,
+
+        /// <summary>
+        /// 导出
+        /// </summary>
+        [Description("导出")]
+        Export,
+
+        /// <summary>
+        /// 查看列表
+        /// </summary>
+        [Description("查看")]
+        Index,
+
+
+        /// <summary>
+        /// 审核
+        /// </summary>
+        [Description("审核")]
+        Audit,
+
+        /// <summary>
+        /// 审核重置
+        /// </summary>
+        [Description("审核重置")]
+        AuditReset,
+
+        /// <summary>
+        /// 导入
+        /// </summary>
+        [Description("导入")]
+        Import,
+
+        /// <summary>
+        /// 查看详情
+        /// </summary>
+        [Description("查看详情")]
+        Details,
+
+        /// <summary>
+        /// 未通过
+        /// </summary>
+        [Description("未通过")]
+        NotPass,    
+
+        /// <summary>
+        /// 浏览
+        /// </summary>
+        [Description("浏览")]
+        View,
+     
+        /// <summary>
+        /// 取消
+        /// </summary>
+        [Description("取消")]
+        Cancel,
+
+        /// <summary>
+        /// 信息补充
+        /// </summary>
+        [Description("信息补充")]
+        AddDetail,
+    }
 }

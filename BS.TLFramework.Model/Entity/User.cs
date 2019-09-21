@@ -52,7 +52,6 @@ namespace BS.TLFramework.Model
         /// 密码
         /// </summary>
         [Display(Name = "密码")]
-        [MaxLength(32, ErrorMessage = "{0}不能多于32位")]
         [Required(ErrorMessage = "{0}不能为空")]
         public string Password { get; set; }
 
