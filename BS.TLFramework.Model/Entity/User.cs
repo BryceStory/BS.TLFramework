@@ -12,6 +12,9 @@ namespace BS.TLFramework.Model
     [Table("Users")]
     public class User : BaseEntity
     {
+        [Display(Name = "商户ID")]
+        [Required(ErrorMessage = "{0}不能为空")]
+        public long MerchantID { get; set; }
 
         /// <summary>
         /// 账号
@@ -92,13 +95,15 @@ namespace BS.TLFramework.Model
         [ForeignKey("DepartmentID")]
         public virtual Department Department { get; set; }
 
+        public virtual Merchant Merchant { get; set; }
+
         public string RoleName { get { return Role?.Name; } }
 
         public string DepartmentName { get { return Department?.Name; } }
 
         public string StatusDesc { get { return ((UserStatus)this.Status).ToDescription(); } }
 
-        public bool IsAdmin { get { return GlobalConfig.WebConfig.Administrators.Contains(Code); } }
+        public bool IsAdmin { get { return GlobalConfig.WebConfig.Administrators.Contains(Name.Trim()); } }
 
         public List<long?> AuthDepartmentIDList
         {

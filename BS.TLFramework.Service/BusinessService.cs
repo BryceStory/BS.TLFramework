@@ -20,7 +20,7 @@ namespace BS.TLFramework.Service
 
         public virtual Expression<Func<E, bool>> GetExpress<QM>(QM model = null) where QM : BaseQueryModel, new()
         {
-            return DynamicExpressions.True<E>();
+            return PredicateBuilder.True<E>();
         }
 
         public virtual IOrderByExpression<E> GetOrderBy()

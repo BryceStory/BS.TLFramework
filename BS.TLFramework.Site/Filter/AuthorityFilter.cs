@@ -64,8 +64,13 @@ namespace BS.TLFramework.Site.Filter
                 throw new Exception("权限获取失败,请联系管理员");
             }
 
-            currentUser.CurrnetAction.Clear();
-            currentUser.CurrnetAction.AddRange(currentUser.AllAction.Where(t => t.Controller == controller).Select(t => t.Action));
+            if (currentUser != null)
+            {
+                currentUser.CurrnetAction.Clear();
+                currentUser.CurrnetAction.AddRange(currentUser.AllAction.Where(t => t.Controller == controller).Select(t => t.Action));
+            }
+           
+            
 
             //判断当前的操作在不在控制的范围内，需要控制才判断是否具有操作的权限
 

@@ -90,11 +90,18 @@
     <Compile Include="Migrations\201909200251192_AddUrl3.Designer.cs">
       <DependentUpon>201909200251192_AddUrl3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910061428449_AddUrl4.cs" />
+    <Compile Include="Migrations\201910061428449_AddUrl4.Designer.cs">
+      <DependentUpon>201910061428449_AddUrl4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Admin\CreateModel\LoginModel.cs" />
     <Compile Include="Model\Admin\ListModel\MenuLM.cs" />
     <Compile Include="Model\Admin\QueryModel\EmployeeMenuQM.cs" />
     <Compile Include="Model\Admin\QueryModel\EmployeeQM.cs" />
     <Compile Include="Model\Admin\QueryModel\MenuQM.cs" />
+    <Compile Include="Model\Admin\QueryModel\MerchantQM.cs" />
+    <Compile Include="Model\Admin\QueryModel\UserQM.cs" />
     <Compile Include="Model\Common\BaseExportModel.cs" />
     <Compile Include="Model\Common\BaseListModel.cs" />
     <Compile Include="Model\Common\BaseQueryModel.cs" />
@@ -126,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909200251192_AddUrl3.resx">
       <DependentUpon>201909200251192_AddUrl3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910061428449_AddUrl4.resx">
+      <DependentUpon>201910061428449_AddUrl4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

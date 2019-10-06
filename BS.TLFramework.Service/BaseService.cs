@@ -29,7 +29,7 @@ namespace BS.TLFramework.Service
         {
         }
 
-        public DbContext dbContext
+        protected DbContext dbContext
         {
             get
             {
@@ -165,8 +165,7 @@ namespace BS.TLFramework.Service
 
         public IList<E> Gets(Expression<Func<E, bool>> expression, int PageIndex, int PageSize, params IOrderByExpression<E>[] orderbys)
         {
-            IQueryable<E> query = this.dbContext.Set<E>().Where<E>(expression);
-           
+            IQueryable<E> query = this.dbContext.Set<E>().Where<E>(expression.Compile()).AsQueryable();
 
             var result = this.ApplyOrderBy<E>(query, orderbys).ToPagedList<E>(PageIndex, PageSize);
 
@@ -175,8 +174,8 @@ namespace BS.TLFramework.Service
 
         public IList<LM> Gets<LM>(Expression<Func<E, bool>> expression, Expression<Func<E, LM>> selector, int PageIndex, int PageSize, params IOrderByExpression<E>[] orderbys) where LM : BaseListModel
         {
-            IQueryable<E> query = this.dbContext.Set<E>().Where<E>(expression);
-
+            // IQueryable<E> query = this.dbContext.Set<E>().Where<E>(expression);
+            IQueryable<E> query = this.dbContext.Set<E>().Where<E>(expression.Compile()).AsQueryable();
             var result = this.ApplyOrderBy<E>(query, orderbys).Select(selector).ToPagedList<LM>(PageIndex, PageSize);
 
             return result;
@@ -185,8 +184,8 @@ namespace BS.TLFramework.Service
         public IList<E> GetsNoTracking(Expression<Func<E, bool>> expression, int PageIndex, int PageSize, params IOrderByExpression<E>[] orderbys)
         {
 
-            IQueryable<E> query = this.dbContext.Set<E>().Where<E>(expression).AsNoTracking();
-
+            // IQueryable<E> query = this.dbContext.Set<E>().Where<E>(expression).AsNoTracking();
+            IQueryable<E> query = this.dbContext.Set<E>().Where<E>(expression.Compile()).AsQueryable().AsNoTracking();
             var result = this.ApplyOrderBy<E>(query, orderbys).ToPagedList<E>(PageIndex, PageSize);
 
             return result;

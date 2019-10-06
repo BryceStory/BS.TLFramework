@@ -1,5 +1,5 @@
 ﻿using BS.TLFramework.Model;
-using BS.TLFramework.Model.Site;
+using BS.TLFramework.Model.Admin;
 using Framework.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace BS.TLFramework.IService
 {
     public interface IEmployeeService : IBusinessService<Employee>
     {
-        LoginStatus Login(LoginModel currentUser);
+      //  LoginStatus Login(LoginModel currentUser);
 
         void CacheCurrnetUser(Employee user);
 

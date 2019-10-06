@@ -186,6 +186,33 @@ namespace BS.TLFramework.Model
         Enable = 1,
     }
 
+    public enum EmployeeStatusOption
+    {
+        /// <summary>
+        /// 锁定
+        /// </summary>
+        [Description("锁定")]
+        Lock = -2,
+
+        /// <summary>
+        /// 停用
+        /// </summary>
+        [Description("停用")]
+        Disable = -1,
+
+        /// <summary>
+        /// 用户未激活（默认值）
+        /// </summary>
+        [Description("未激活")]
+        NotActive = 0,
+
+        /// <summary>
+        /// 启用
+        /// </summary>
+        [Description("启用")]
+        Enable = 1,
+    }
+
     public enum LoginStatus
     {
         /// <summary>

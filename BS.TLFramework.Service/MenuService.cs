@@ -19,15 +19,15 @@ namespace BS.TLFramework.Service
     {
         public override Expression<Func<Menu, bool>> GetExpress<QM>(QM model)
         {
-            Expression<Func<Menu, bool>> express = DynamicExpressions.True<Menu>();
+            Expression<Func<Menu, bool>> express = PredicateBuilder.True<Menu>();
 
             if (model.Status == null)
             {
-                express = express.AndAlso(t => t.Status == 1);
+                express = express.And(t => t.Status == 1);
             }
             else
             {
-                express = express.AndAlso(t => t.Status == model.Status);
+                express = express.And(t => t.Status == model.Status);
             }
 
             return express;
@@ -40,7 +40,6 @@ namespace BS.TLFramework.Service
             var iMenuService = DIFactory.GetContainer().Resolve<IMenuService>();
             var iMenuActionService = DIFactory.GetContainer().Resolve<IMenuActionService>();
 
-            var me = iMenuService.GetAllList<MenuQM>();
             var user = iUserService.Get(t => t.ID == currentUser.ID);
             if (user != null)
             {

@@ -1,4 +1,5 @@
 ﻿using BS.TLFramework.Model;
+using BS.TLFramework.Model.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,13 @@ namespace BS.TLFramework.IService
 {
     public interface IUserService : IBusinessService<User>
     {
-        //LoginStatus Login(LoginModel currentUser);
+        LoginStatus Login(LoginModel currentUser);
 
-        //void CacheCurrnetUser(User user);
+        void CacheCurrnetUser(User user);
 
         //CurrentUser ConvertCurrentUser(User user);
 
-        //List<User> GetAuthList();
+        List<User> GetAuthList();
     }
 
 

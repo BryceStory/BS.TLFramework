@@ -49,6 +49,7 @@
     <Compile Include="IEmployeeService.cs" />
     <Compile Include="IMenuActionService.cs" />
     <Compile Include="IMenuService.cs" />
+    <Compile Include="IMerchantService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using BS.TLFramework.IService;
 using BS.TLFramework.Model;
-using BS.TLFramework.Model.Site;
+using BS.TLFramework.Model.Admin;
 using Framework.Common;
 using Framework.Expression;
 using Framework.Models;
@@ -20,7 +20,7 @@ namespace BS.TLFramework.Service
     {
         public override Expression<Func<Employee, bool>> GetExpress<QM>(QM model)
         {
-            Expression<Func<Employee, bool>> express = DynamicExpressions.True<Employee>();
+            Expression<Func<Employee, bool>> express = PredicateBuilder.True<Employee>();
 
             var m = model as EmployeeQM;
 
@@ -28,51 +28,51 @@ namespace BS.TLFramework.Service
             {
                 if (!string.IsNullOrWhiteSpace(m.Code))
                 {
-                    express = express.AndAlso(t => t.Merchant.Code == m.Code.Trim());
+                    express = express.And(t => t.Merchant.Code == m.Code.Trim());
                 }
                 if (!string.IsNullOrWhiteSpace(m.MerchantName))
                 {
-                    express = express.AndAlso(t => t.Merchant.Name.Contains(m.MerchantName.Trim()));
+                    express = express.And(t => t.Merchant.Name.Contains(m.MerchantName.Trim()));
                 }
 
                 if (!string.IsNullOrWhiteSpace(m.Name))
                 {
-                    express = express.AndAlso(t => t.Name.Contains(m.Name.Trim()));
+                    express = express.And(t => t.Name.Contains(m.Name.Trim()));
                 }
                 if (!string.IsNullOrWhiteSpace(m.Mobile))
                 {
-                    express = express.AndAlso(t => t.Mobile == m.Mobile.Trim());
+                    express = express.And(t => t.Mobile == m.Mobile.Trim());
                 }
                 if (currentUser.MerchantID != 0)
                 {
-                    express = express.AndAlso(t => t.MerchantID == currentUser.MerchantID);
+                    express = express.And(t => t.MerchantID == currentUser.MerchantID);
                 }
             }
             else
             {
                 if (m.MerchantID != null)    //客户端用户查询时，默认根据当前用户的商户ID来查询（MerchantID）
                 {
-                    express = express.AndAlso(t => t.MerchantID == m.MerchantID);
+                    express = express.And(t => t.MerchantID == m.MerchantID);
                 }
 
                 if (!string.IsNullOrWhiteSpace(m.Code))
                 {
-                    express = express.AndAlso(t => t.Code == m.Code.Trim() && t.MerchantID == m.MerchantID);
+                    express = express.And(t => t.Code == m.Code.Trim() && t.MerchantID == m.MerchantID);
                 }
                 if (!string.IsNullOrWhiteSpace(m.MerchantName))
                 {
-                    express = express.AndAlso(t => t.Merchant.Name == m.MerchantName.Trim() && t.MerchantID == m.MerchantID);
+                    express = express.And(t => t.Merchant.Name == m.MerchantName.Trim() && t.MerchantID == m.MerchantID);
                 }
 
                 if (!string.IsNullOrWhiteSpace(m.Name))
                 {
-                    express = express.AndAlso(t => t.Name.Contains(m.Name.Trim()) && t.MerchantID == m.MerchantID);
+                    express = express.And(t => t.Name.Contains(m.Name.Trim()) && t.MerchantID == m.MerchantID);
                 }
             }
 
             if (m.Status != null)
             {
-                express = express.AndAlso(t => t.Status == m.Status);
+                express = express.And(t => t.Status == m.Status);
             }
 
             return express;
@@ -173,12 +173,12 @@ namespace BS.TLFramework.Service
 
         public List<Employee> GetAuthList()
         {
-            Expression<Func<Employee, bool>> express = DynamicExpressions.True<Employee>();
+            Expression<Func<Employee, bool>> express = PredicateBuilder.True<Employee>();
 
             if (!currentUser.IsAdmin)
             {
                 var users = this.GetDepartmentUsers(currentUser.ID);
-                express = express.AndAlso(t => users.Contains(t.ID));
+                express = express.And(t => users.Contains(t.ID));
             }
 
             return this.Gets(express, 1, Int32.MaxValue, new OrderByExpression<Employee, string>(t => t.Name)).ToList();

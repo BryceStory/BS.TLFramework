@@ -29,7 +29,7 @@ namespace BS.TLFramework.Site
             var iMenuService = DIFactory.GetContainer().Resolve<IMenuService>();
 
             iMenuActionService.SetCache();
-            //iMenuService.SetCache();
+            iMenuService.SetCache();
         }
     }
 }

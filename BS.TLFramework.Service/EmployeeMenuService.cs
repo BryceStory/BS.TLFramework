@@ -18,15 +18,15 @@ namespace BS.TLFramework.Service
     {
         public override Expression<Func<EmployeeMenu, bool>> GetExpress<QM>(QM model)
         {
-            Expression<Func<EmployeeMenu, bool>> express = DynamicExpressions.True<EmployeeMenu>();
+            Expression<Func<EmployeeMenu, bool>> express = PredicateBuilder.True<EmployeeMenu>();
 
             if (model.Status == null)
             {
-                express = express.AndAlso(t => t.Status == 1);
+                express = express.And(t => t.Status == 1);
             }
             else
             {
-                express = express.AndAlso(t => t.Status == model.Status);
+                express = express.And(t => t.Status == model.Status);
             }
 
             return express;

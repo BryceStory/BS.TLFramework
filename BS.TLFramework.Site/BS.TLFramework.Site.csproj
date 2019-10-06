@@ -164,12 +164,28 @@
     <Content Include="CfgFiles\Unity.Config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\font\fontawesome-webfont.svg" />
+    <Content Include="Content\patterns\header-profile-skin-1.png" />
+    <Content Include="Content\patterns\header-profile-skin-3.png" />
+    <Content Include="Content\patterns\header-profile.png" />
+    <Content Include="Content\patterns\shattered.png" />
+    <Content Include="Content\style.css" />
+    <Content Include="Images\a1.jpg" />
+    <Content Include="Images\a2.jpg" />
+    <Content Include="Images\a3.jpg" />
+    <Content Include="Images\a4.jpg" />
+    <Content Include="Images\a5.jpg" />
+    <Content Include="Images\a6.jpg" />
+    <Content Include="Images\a7.jpg" />
+    <Content Include="Images\a8.jpg" />
+    <Content Include="Images\a9.jpg" />
+    <Content Include="Images\profile_small.jpg" />
     <Content Include="Plugins\Hui-iconfont\1.0.7\demo.html" />
     <Content Include="Plugins\Hui-iconfont\1.0.7\iconfont.css" />
     <Content Include="Plugins\Hui-iconfont\1.0.7\iconfont.svg" />
@@ -396,6 +412,9 @@
     <Content Include="Plugins\h-ui\js\H-ui.js" />
     <Content Include="Plugins\bootstrap-multiselect\bootstrap-multiselect.css" />
     <Content Include="Plugins\bootstrap-multiselect\bootstrap-multiselect.js" />
+    <Content Include="Plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Plugins\pace\pace.min.js" />
+    <Content Include="Plugins\slimscroll\jquery.slimscroll.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\font\fontawesome-webfont.eot" />
@@ -407,6 +426,8 @@
     <Content Include="Plugins\Hui-iconfont\1.0.7\iconfont.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\contabs.js" />
+    <Content Include="Scripts\hplus.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -469,8 +490,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Bread.cshtml" />
     <Content Include="Views\Shared\Tip.cshtml" />
